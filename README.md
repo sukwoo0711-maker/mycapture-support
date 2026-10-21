@@ -1,6 +1,6 @@
 # MyCapture 지원
 
-MyCapture는 개발자를 위한 무료 Windows 캡처·핀 도구입니다. 이 저장소는 사용자 지원과 공개 문서를 위한 곳이며, 앱의 소스 코드는 [my-capture 저장소](https://github.com/sukwoo0711-maker/my-capture)에 있습니다. 기능 소개와 화면은 [MyCapture 웹 페이지](https://sukwoo0711-maker.github.io/my-capture/)에서 볼 수 있습니다.
+MyCapture는 개발자를 위한 무료 Windows 캡처·핀 도구입니다. 이 저장소는 사용자 지원과 공개 문서를 위한 곳이며, 앱의 소스 코드는 [my-capture 저장소](https://github.com/sukwoo0711-maker/my-capture)에 있습니다. 기능 소개와 화면은 [MyCapture 웹 페이지](https://mycapture.mimiloaf.com/)에서 볼 수 있습니다.
 
 ## 설치
 
@@ -27,8 +27,9 @@ Windows 10에서는 녹화하는 동안 화면 가장자리에 노란 테두리�
 
 ## 문의
 
-문의하는 방법은 세 가지입니다. 편한 쪽을 쓰십시오.
+문의하는 방법은 네 가지입니다. 편한 쪽을 쓰십시오.
 
+- **메일**: [support@mimiloaf.com](mailto:support@mimiloaf.com)으로 보내 주십시오. GitHub 계정이 없어도 됩니다.
 - **GitHub 이슈**: 문제 신고와 기능 제안은 [새 이슈](https://github.com/sukwoo0711-maker/mycapture-support/issues/new)로 남겨 주십시오. Windows 버전, MyCapture 버전, 재현 단계를 함께 적어 주시면 확인이 빠릅니다. Windows 버전은 `Win+R`에서 `winver`를 실행하면 확인할 수 있습니다.
 - **Microsoft Store 리뷰**: GitHub 계정이 없으면 [Store의 MyCapture 페이지](https://apps.microsoft.com/detail/9PB33MC095VR?cid=support)에 리뷰를 남겨 주십시오. Microsoft 계정으로 쓸 수 있습니다.
 - **앱의 '문의하기' 창**: 4.4.0부터 앱 안의 '문의하기' 창이 앱 버전과 Windows 버전 같은 진단 정보를 채워 줍니다. 내용을 적은 뒤 GitHub 이슈나 Store 리뷰로 보낼 수 있고, 진단 정보만 복사할 수도 있습니다.
@@ -37,21 +38,24 @@ Windows 10에서는 녹화하는 동안 화면 가장자리에 노란 테두리�
 
 ## 문서
 
-- [MyCapture 웹 페이지](https://sukwoo0711-maker.github.io/my-capture/)
+- [MyCapture 웹 페이지](https://mycapture.mimiloaf.com/)
+- 게시자: [Mimiloaf](https://mimiloaf.com/)
 - [개인정보처리방침](PRIVACY.md)
 
 ---
 
 # MyCapture support
 
-MyCapture is a free Windows screenshot and pinning tool for developers. This repository hosts user support and public documents; the app's source code is in the [my-capture repository](https://github.com/sukwoo0711-maker/my-capture). See features and screenshots on the [MyCapture website](https://sukwoo0711-maker.github.io/my-capture/en/).
+MyCapture is a free Windows screenshot and pinning tool for developers. This repository hosts user support and public documents; the app's source code is in the [my-capture repository](https://github.com/sukwoo0711-maker/my-capture). See features and screenshots on the [MyCapture website](https://mycapture.mimiloaf.com/en/).
 
 It runs on Windows 11 and on Windows 10 version 22H2 (build 19045) x64 PCs. ARM64 PCs need Windows 11. On Windows 10, a yellow border may appear around the screen while recording; it is not included in the recording.
 
 - Install MyCapture from the [Microsoft Store](https://apps.microsoft.com/detail/9PB33MC095VR?cid=support). Updates are delivered by the Store.
-- There are three ways to get help:
+- There are four ways to get help:
+  - Email [support@mimiloaf.com](mailto:support@mimiloaf.com). No GitHub account is needed.
   - Report problems or suggest features in a [new issue](https://github.com/sukwoo0711-maker/mycapture-support/issues/new), including your Windows version (run `winver`) and MyCapture version.
   - Without a GitHub account, leave a review on the [MyCapture Store page](https://apps.microsoft.com/detail/9PB33MC095VR?cid=support) with your Microsoft account.
   - From 4.4.0, the app's Contact support window fills in diagnostic details such as the app and Windows versions. Write your message, then send it as a GitHub issue or a Store review, or copy the details.
 - Report security issues privately through [a security advisory](https://github.com/sukwoo0711-maker/mycapture-support/security/advisories/new).
 - [Privacy policy](PRIVACY.md)
+- Publisher: [Mimiloaf](https://mimiloaf.com/en/)

@@ -48,7 +48,7 @@ MyCapture는 다음 경우에만 인터넷에 연결합니다.
 
 ## 문의
 
-개인정보 관련 문의는 [이슈](https://github.com/sukwoo0711-maker/mycapture-support/issues)로 보내 주십시오. 보안 문제는 공개 이슈 대신 [비공개 보안 신고](https://github.com/sukwoo0711-maker/mycapture-support/security/advisories/new)를 이용하십시오.
+개인정보 관련 문의는 [support@mimiloaf.com](mailto:support@mimiloaf.com)이나 [이슈](https://github.com/sukwoo0711-maker/mycapture-support/issues)로 보내 주십시오. 보안 문제는 공개 이슈 대신 [비공개 보안 신고](https://github.com/sukwoo0711-maker/mycapture-support/security/advisories/new)를 이용하십시오.
 
 ---
 
@@ -102,4 +102,4 @@ Installation and updates are provided by the Microsoft Store under the [Microsof
 
 ## Contact
 
-Send privacy questions through [issues](https://github.com/sukwoo0711-maker/mycapture-support/issues). Report security issues privately through [a security advisory](https://github.com/sukwoo0711-maker/mycapture-support/security/advisories/new) instead of a public issue.
+Send privacy questions to [support@mimiloaf.com](mailto:support@mimiloaf.com) or through [issues](https://github.com/sukwoo0711-maker/mycapture-support/issues). Report security issues privately through [a security advisory](https://github.com/sukwoo0711-maker/mycapture-support/security/advisories/new) instead of a public issue.

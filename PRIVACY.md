@@ -1,6 +1,6 @@
 # MyCapture 개인정보처리방침
 
-시행일: 2026-10-21
+시행일: 2026-10-23
 
 MyCapture는 화면 캡처, 주석 편집, OCR, 영역 녹화를 사용자 PC 안에서 처리하는 데스크톱 앱이며 Microsoft Store로 배포합니다.
 
@@ -20,6 +20,7 @@ MyCapture 개발자는 사용자의 개인정보, 캡처 내용, 사용 기록�
 ## 저장 위치
 
 - 설정과 라이브러리는 앱 전용 폴더(`%LOCALAPPDATA%\Packages\<패키지 이름>\LocalState`)에 저장합니다. 앱을 제거하면 이 폴더도 함께 삭제됩니다.
+- GitHub에서 받은 설치 파일이나 포터블 ZIP으로 설치한 경우에는 `%APPDATA%\MyCapture`에 저장하며, 앱을 제거해도 남습니다.
 - 빠른 저장으로 내보낸 파일은 `사진\Captures` 또는 사용자가 지정한 폴더에 저장되며, 앱을 제거해도 남습니다.
 
 ## 네트워크 연결
@@ -36,8 +37,12 @@ MyCapture는 다음 경우에만 인터넷에 연결합니다.
    - 토큰이 없으면 설정한 이슈 페이지(기본값은 이 지원 저장소의 새 이슈 페이지)를 기본 브라우저로 열고 이미지를 붙여 넣기만 합니다. 게시 버튼은 누르지 않습니다.
    - GitHub로 전송된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
 3. **원본 페이지 열기**: 사용자가 라이브러리에서 저장된 페이지 주소를 열면 기본 브라우저가 그 주소에 연결합니다.
+4. **새 버전 확인**: 설정 > 정보의 "새 버전 자동 확인"이 켜져 있으면(기본값) 하루에 한 번 새 버전이 있는지 확인합니다. 이 설정을 끄면 "업데이트 확인"을 누를 때만 확인합니다.
+   - Microsoft Store에서 설치한 경우 Microsoft Store를 통해 확인하고 설치합니다.
+   - GitHub에서 받은 설치 파일이나 포터블 ZIP으로 설치한 경우 GitHub API(`api.github.com`)에서 최신 릴리스 정보를 확인합니다. 업데이트를 누르면 GitHub(`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`)에서 설치 파일과 해시 목록을 내려받습니다.
+   - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름과 버전이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다. GitHub로 전달된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
 
-설치와 업데이트는 Microsoft Store가 제공합니다. 이 과정의 정보 처리에는 [Microsoft 개인정보처리방침](https://privacy.microsoft.com/privacystatement)이 적용됩니다.
+Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공합니다. 이 과정의 정보 처리에는 [Microsoft 개인정보처리방침](https://privacy.microsoft.com/privacystatement)이 적용됩니다.
 
 ## 데이터 삭제
 
@@ -54,7 +59,7 @@ MyCapture는 다음 경우에만 인터넷에 연결합니다.
 
 # MyCapture Privacy Policy
 
-Effective date: 2026-10-21
+Effective date: 2026-10-23
 
 MyCapture is a desktop app, distributed through the Microsoft Store, that captures, annotates, recognizes text in (OCR) and records the screen on your PC.
 
@@ -74,6 +79,7 @@ The following stays on your PC and is not sent anywhere unless you use one of th
 ## Where data is stored
 
 - Settings and the library are kept in the app's package folder (`%LOCALAPPDATA%\Packages\<package name>\LocalState`), which Windows deletes when you uninstall the app.
+- Installations from the GitHub setup file or portable ZIP keep them in `%APPDATA%\MyCapture`, which remains after uninstalling.
 - Quick-save exports go to `Pictures\Captures` or a folder you choose, and remain after uninstalling.
 
 ## Network connections
@@ -90,8 +96,12 @@ MyCapture connects to the internet only in these cases:
    - Without a token, the app opens your configured issue page (by default, a new issue in this support repository) in your default browser and pastes the image without posting it.
    - [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to data sent to GitHub.
 3. **Opening a source page**: when you open a saved page address from the library, your default browser connects to it.
+4. **Checking for new versions**: with "Check for new versions automatically" on in Settings > About (the default), MyCapture checks once a day whether a new version exists. With it off, it checks only when you press **Check for updates**.
+   - Microsoft Store installations check and install through the Microsoft Store.
+   - Installations from the GitHub setup file or portable ZIP read the latest release information from the GitHub API (`api.github.com`). Pressing **Update** downloads the installer and its hash list from GitHub (`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`).
+   - These requests carry only ordinary HTTP connection information (IP address and a User-Agent with the app name and version), never capture content or personal data. [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to what reaches GitHub.
 
-Installation and updates are provided by the Microsoft Store under the [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement).
+For Microsoft Store installations, installation and updates are provided by the Microsoft Store under the [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement).
 
 ## Deleting data
 

@@ -29,8 +29,9 @@ MyCapture는 다음 경우에만 인터넷에 연결합니다.
 
 1. **OCR 모델 내려받기**
    - 인식 품질이 빠름(기본값)이나 보통이면 Windows에 들어 있는 인식 기능만 쓰므로 아무것도 내려받지 않습니다.
-   - 설정에서 인식 품질을 정확이나 가장 정확으로 바꾸면, 그 품질로 처음 인식할 때 ModelScope(modelscope.cn)에서 공개 모델 파일을 내려받습니다. 그 품질로 둔 동안에는 앱이 시작할 때 빠진 모델 파일이 있는지 확인하고, 없으면 내려받습니다.
-   - 가장 정확에서 쓰는 이미지 확대 모델은 처음 사용할 때 Amazon S3(qaihub-public-assets)에서 내려받습니다.
+   - 인식 품질이 정확이면 ModelScope(modelscope.cn)에서 공개 PP-OCRv5 모델 파일(약 102MB)을 내려받습니다. 설정에서 정확으로 바꾸면 그때 내려받고, 처음 설치할 때 환영 화면의 "정확한 한국어 글자 인식"을 켜 둔 채 닫으면 첫 실행 뒤 백그라운드에서 내려받습니다. 이 항목은 사양이 충분한 PC(4코어 이상, 메모리 8GB 이상)에서 미리 선택되어 있습니다.
+   - 정확으로 둔 동안에는 앱이 시작할 때 빠진 모델 파일이 있는지 확인하고, 없으면 내려받습니다. 데이터 요금제나 로밍 연결, 데이터 한도 초과, 배터리 절약 모드에서는 백그라운드 내려받기를 미룹니다.
+   - 4.6.0까지 있던 "가장 정확" 품질은 처음 사용할 때 이미지 확대 모델을 Amazon S3(qaihub-public-assets)에서 내려받습니다. 이후 버전에는 이 품질이 없고, 저장된 "가장 정확" 설정은 정확으로 바뀝니다.
    - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다.
 2. **GitHub 이미지 첨부**: 사용자가 이 기능의 단축키를 눌렀을 때만 동작합니다. 새로 설치하면 단축키가 지정되어 있지 않고, 이전 버전에서 업데이트한 설치는 쓰던 키(이전 기본값 `F9`)를 그대로 씁니다.
    - 토큰을 설정했으면 GitHub API를 통해 이미지를 GitHub에 올립니다. 브라우저 화면을 캡처한 이미지라면 페이지 주소 메타데이터가 함께 전송될 수 있습니다.
@@ -88,8 +89,9 @@ MyCapture connects to the internet only in these cases:
 
 1. **OCR model download**
    - With recognition quality set to Fast (the default) or Normal, the app uses the recognition built into Windows and downloads nothing.
-   - If you choose Accurate or Most accurate in Settings, the app downloads public model files from ModelScope (modelscope.cn) the first time it recognizes text at that quality. While either quality stays selected, it checks for missing model files at startup and downloads any that are missing.
-   - The image upscaling model used by Most accurate is downloaded from Amazon S3 (qaihub-public-assets) the first time you use it.
+   - With Accurate, the app downloads the public PP-OCRv5 model files (about 102 MB) from ModelScope (modelscope.cn): when you choose Accurate in Settings, or in the background after the first start if you leave "Accurate Korean text recognition" on in the welcome screen of a new installation. That option is preselected on capable PCs (4 or more cores, 8 GB or more memory).
+   - While Accurate stays selected, the app checks for missing model files at startup and downloads any that are missing. Background downloads wait while the connection is metered, roaming or over its data limit, or while battery saver is on.
+   - The "Most accurate" quality, available up to version 4.6.0, downloads an image upscaling model from Amazon S3 (qaihub-public-assets) the first time you use it. Later versions no longer offer it and change a saved "Most accurate" setting to Accurate.
    - These requests carry only ordinary HTTP connection data (IP address, a User-Agent with the app name). They never include capture content or personal information.
 2. **GitHub image attachment**: runs only when you press its shortcut. New installations have no shortcut assigned; installations updated from an earlier version keep their key (the earlier default was `F9`).
    - With a token configured, the image is uploaded to GitHub through its API. For a browser capture, the page address metadata may be included.

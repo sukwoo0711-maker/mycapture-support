@@ -1,6 +1,6 @@
 # MyCapture 지원
 
-MyCapture는 개발자를 위한 무료 Windows 캡처·핀 도구입니다. 이 저장소는 사용자 지원과 공개 문서를 위한 곳이며, 앱의 소스 코드는 [my-capture 저장소](https://github.com/sukwoo0711-maker/my-capture)에 있습니다. 기능 소개와 화면은 [MyCapture 웹 페이지](https://mycapture.mimiloaf.com/)에서 볼 수 있습니다.
+MyCapture는 개발자를 위한 무료 Windows 캡처·핀 도구입니다. 이 저장소는 사용자 지원과 공개 문서를 위한 곳이며, 앱의 소스 코드는 [my-capture 저장소](https://github.com/sukwoo0711-maker/my-capture)에 있습니다. 기능 소개와 화면은 [MyCapture 웹 페이지](https://mimiloaf.com/mycapture/)에서 볼 수 있습니다.
 
 ## 설치
 
@@ -38,7 +38,7 @@ Windows 10에서는 녹화하는 동안 화면 가장자리에 노란 테두리�
 
 ## 문서
 
-- [MyCapture 웹 페이지](https://mycapture.mimiloaf.com/)
+- [MyCapture 웹 페이지](https://mimiloaf.com/mycapture/)
 - 게시자: [Mimiloaf](https://mimiloaf.com/)
 - [개인정보처리방침](PRIVACY.md)
 
@@ -46,7 +46,7 @@ Windows 10에서는 녹화하는 동안 화면 가장자리에 노란 테두리�
 
 # MyCapture support
 
-MyCapture is a free Windows screenshot and pinning tool for developers. This repository hosts user support and public documents; the app's source code is in the [my-capture repository](https://github.com/sukwoo0711-maker/my-capture). See features and screenshots on the [MyCapture website](https://mycapture.mimiloaf.com/en/).
+MyCapture is a free Windows screenshot and pinning tool for developers. This repository hosts user support and public documents; the app's source code is in the [my-capture repository](https://github.com/sukwoo0711-maker/my-capture). See features and screenshots on the [MyCapture website](https://mimiloaf.com/en/mycapture/).
 
 It runs on Windows 11 and on Windows 10 version 22H2 (build 19045) x64 PCs. ARM64 PCs need Windows 11. On Windows 10, a yellow border may appear around the screen while recording; it is not included in the recording.
 

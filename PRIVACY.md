@@ -1,8 +1,8 @@
 # MyCapture 개인정보처리방침
 
-시행일: 2026-10-23
+시행일: 2026-10-25
 
-MyCapture는 화면 캡처, 주석 편집, OCR, 영역 녹화를 사용자 PC 안에서 처리하는 데스크톱 앱이며 Microsoft Store로 배포합니다.
+MyCapture는 화면 캡처, 주석 편집, OCR, 번역, 영역 녹화를 사용자 PC 안에서 처리하는 데스크톱 앱이며 Microsoft Store로 배포합니다.
 
 ## 수집하지 않는 정보
 
@@ -33,12 +33,17 @@ MyCapture는 다음 경우에만 인터넷에 연결합니다.
    - 정확으로 둔 동안에는 앱이 시작할 때 빠진 모델 파일이 있는지 확인하고, 없으면 내려받습니다. 데이터 요금제나 로밍 연결, 데이터 한도 초과, 배터리 절약 모드에서는 백그라운드 내려받기를 미룹니다.
    - 4.6.0까지 있던 "가장 정확" 품질은 처음 사용할 때 이미지 확대 모델을 Amazon S3(qaihub-public-assets)에서 내려받습니다. 이후 버전에는 이 품질이 없고, 저장된 "가장 정확" 설정은 정확으로 바뀝니다.
    - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다.
-2. **GitHub 이미지 첨부**: 사용자가 이 기능의 단축키를 눌렀을 때만 동작합니다. 새로 설치하면 단축키가 지정되어 있지 않고, 이전 버전에서 업데이트한 설치는 쓰던 키(이전 기본값 `F9`)를 그대로 씁니다.
+2. **번역 모델 내려받기**
+   - 번역은 기본으로 꺼져 있습니다. 사용자가 OCR 결과 창의 번역 탭에서 "번역 켜기"를 누를 때만 GitHub(`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`)에서 공개 OPUS-MT 영어→한국어 번역 모델 파일(약 247MB)을 내려받습니다. 앱이 시작할 때나 백그라운드에서는 내려받지 않습니다.
+   - 번역은 사용자 PC 안에서 실행합니다. 번역할 글자와 캡처 이미지는 외부로 보내지 않습니다.
+   - 내려받은 모델은 Microsoft Store 설치본이면 앱 전용 폴더(`%LOCALAPPDATA%\Packages\<패키지 이름>\LocalCache`), GitHub에서 받은 설치 파일이나 포터블 ZIP 설치본이면 `%LOCALAPPDATA%\MyCapture\translation-models`에 저장합니다.
+   - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다. GitHub로 전달된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
+3. **GitHub 이미지 첨부**: 사용자가 이 기능의 단축키를 눌렀을 때만 동작합니다. 새로 설치하면 단축키가 지정되어 있지 않고, 이전 버전에서 업데이트한 설치는 쓰던 키(이전 기본값 `F9`)를 그대로 씁니다.
    - 토큰을 설정했으면 GitHub API를 통해 이미지를 GitHub에 올립니다. 브라우저 화면을 캡처한 이미지라면 페이지 주소 메타데이터가 함께 전송될 수 있습니다.
    - 토큰이 없으면 설정한 이슈 페이지(기본값은 이 지원 저장소의 새 이슈 페이지)를 기본 브라우저로 열고 이미지를 붙여 넣기만 합니다. 게시 버튼은 누르지 않습니다.
    - GitHub로 전송된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
-3. **원본 페이지 열기**: 사용자가 라이브러리에서 저장된 페이지 주소를 열면 기본 브라우저가 그 주소에 연결합니다.
-4. **새 버전 확인**: 설정 > 정보의 "새 버전 자동 확인"이 켜져 있으면(기본값) 하루에 한 번 새 버전이 있는지 확인합니다. 이 설정을 끄면 "업데이트 확인"을 누를 때만 확인합니다.
+4. **원본 페이지 열기**: 사용자가 라이브러리에서 저장된 페이지 주소를 열면 기본 브라우저가 그 주소에 연결합니다.
+5. **새 버전 확인**: 설정 > 정보의 "새 버전 자동 확인"이 켜져 있으면(기본값) 하루에 한 번 새 버전이 있는지 확인합니다. 이 설정을 끄면 "업데이트 확인"을 누를 때만 확인합니다.
    - Microsoft Store에서 설치한 경우 Microsoft Store를 통해 확인하고 설치합니다.
    - GitHub에서 받은 설치 파일이나 포터블 ZIP으로 설치한 경우 GitHub API(`api.github.com`)에서 최신 릴리스 정보를 확인합니다. 업데이트를 누르면 GitHub(`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`)에서 설치 파일과 해시 목록을 내려받습니다.
    - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름과 버전이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다. GitHub로 전달된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
@@ -50,6 +55,7 @@ Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공
 - 라이브러리의 항목은 앱 안에서 삭제할 수 있습니다. 새로 설치하면 보관 기간 제한이 없고, 폴더 밖 항목이 1,000개나 5GB를 넘을 때만 오래된 항목부터 자동으로 정리합니다. 보관으로 표시한 항목과 폴더에 넣은 항목은 자동 정리에서 제외합니다.
 - 이전 버전에서 업데이트한 설치는 쓰던 설정을 그대로 씁니다. 이전 기본값은 7일이 지난 이미지 정리, 300개, 2GB입니다. 보관 기간과 한도는 설정 > 저장 공간에서 바꿀 수 있습니다.
 - GitHub 토큰은 설정에서 지울 수 있습니다.
+- 내려받은 번역 모델은 설정에서 삭제할 수 있습니다.
 - 앱을 제거하면 앱 전용 폴더의 설정과 라이브러리가 삭제됩니다.
 
 ## 문의
@@ -60,9 +66,9 @@ Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공
 
 # MyCapture Privacy Policy
 
-Effective date: 2026-10-23
+Effective date: 2026-10-25
 
-MyCapture is a desktop app, distributed through the Microsoft Store, that captures, annotates, recognizes text in (OCR) and records the screen on your PC.
+MyCapture is a desktop app, distributed through the Microsoft Store, that captures, annotates, recognizes text in (OCR), translates and records the screen on your PC.
 
 ## Information we do not collect
 
@@ -93,12 +99,17 @@ MyCapture connects to the internet only in these cases:
    - While Accurate stays selected, the app checks for missing model files at startup and downloads any that are missing. Background downloads wait while the connection is metered, roaming or over its data limit, or while battery saver is on.
    - The "Most accurate" quality, available up to version 4.6.0, downloads an image upscaling model from Amazon S3 (qaihub-public-assets) the first time you use it. Later versions no longer offer it and change a saved "Most accurate" setting to Accurate.
    - These requests carry only ordinary HTTP connection data (IP address, a User-Agent with the app name). They never include capture content or personal information.
-2. **GitHub image attachment**: runs only when you press its shortcut. New installations have no shortcut assigned; installations updated from an earlier version keep their key (the earlier default was `F9`).
+2. **Translation model download**
+   - Translation is off by default. Only when you press **Turn on translation** in the Translate tab of the OCR result window does MyCapture download the public OPUS-MT English-to-Korean translation model files (about 247 MB) from GitHub (`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`). Nothing is downloaded at startup or in the background.
+   - Translation runs on your PC. The text to translate and your captured images are never sent anywhere.
+   - The model is stored in the app's package folder (`%LOCALAPPDATA%\Packages\<package name>\LocalCache`) for Microsoft Store installations, or in `%LOCALAPPDATA%\MyCapture\translation-models` for installations from the GitHub setup file or portable ZIP.
+   - These requests carry only ordinary HTTP connection data (IP address, a User-Agent with the app name). They never include capture content or personal information. [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to data that reaches GitHub.
+3. **GitHub image attachment**: runs only when you press its shortcut. New installations have no shortcut assigned; installations updated from an earlier version keep their key (the earlier default was `F9`).
    - With a token configured, the image is uploaded to GitHub through its API. For a browser capture, the page address metadata may be included.
    - Without a token, the app opens your configured issue page (by default, a new issue in this support repository) in your default browser and pastes the image without posting it.
    - [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to data sent to GitHub.
-3. **Opening a source page**: when you open a saved page address from the library, your default browser connects to it.
-4. **Checking for new versions**: with "Check for new versions automatically" on in Settings > About (the default), MyCapture checks once a day whether a new version exists. With it off, it checks only when you press **Check for updates**.
+4. **Opening a source page**: when you open a saved page address from the library, your default browser connects to it.
+5. **Checking for new versions**: with "Check for new versions automatically" on in Settings > About (the default), MyCapture checks once a day whether a new version exists. With it off, it checks only when you press **Check for updates**.
    - Microsoft Store installations check and install through the Microsoft Store.
    - Installations from the GitHub setup file or portable ZIP read the latest release information from the GitHub API (`api.github.com`). Pressing **Update** downloads the installer and its hash list from GitHub (`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`).
    - These requests carry only ordinary HTTP connection information (IP address and a User-Agent with the app name and version), never capture content or personal data. [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to what reaches GitHub.
@@ -110,6 +121,7 @@ For Microsoft Store installations, installation and updates are provided by the 
 - You can delete library items in the app. New installations keep items with no time limit and clean up the oldest items outside folders only after they pass 1,000 items or 5 GB. Items marked Keep and items in folders are never cleaned up automatically.
 - Installations updated from an earlier version keep their settings. The earlier defaults were cleanup of images older than 7 days, 300 items and 2 GB. Change the retention period and limits in Settings > Storage.
 - You can clear the GitHub token in Settings.
+- You can delete the downloaded translation model in Settings.
 - Uninstalling the app deletes the settings and library in its package folder.
 
 ## Contact

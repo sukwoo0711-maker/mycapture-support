@@ -1,6 +1,6 @@
 # MyCapture 개인정보처리방침
 
-시행일: 2026-10-25
+시행일: 2026-10-29
 
 MyCapture는 화면 캡처, 주석 편집, OCR, 번역, 영역 녹화를 사용자 PC 안에서 처리하는 데스크톱 앱이며 Microsoft Store로 배포합니다.
 
@@ -34,16 +34,19 @@ MyCapture는 다음 경우에만 인터넷에 연결합니다.
    - 4.6.0까지 있던 "가장 정확" 품질은 처음 사용할 때 이미지 확대 모델을 Amazon S3(qaihub-public-assets)에서 내려받습니다. 이후 버전에는 이 품질이 없고, 저장된 "가장 정확" 설정은 정확으로 바뀝니다.
    - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다.
 2. **번역 모델 내려받기**
-   - 번역은 기본으로 꺼져 있습니다. 사용자가 OCR 결과 창의 번역 탭에서 "번역 켜기"를 누를 때만 GitHub(`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`)에서 공개 OPUS-MT 영어→한국어 번역 모델 파일(약 247MB)을 내려받습니다. 앱이 시작할 때나 백그라운드에서는 내려받지 않습니다.
-   - 번역은 사용자 PC 안에서 실행합니다. 번역할 글자와 캡처 이미지는 외부로 보내지 않습니다.
+   - 번역은 기본으로 꺼져 있습니다. 사용자가 OCR 결과 창의 번역 탭에서 "번역 켜기"를 누르거나, 핀의 "번역"을 누르고 설치에 동의할 때만 GitHub(`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`)에서 공개 OPUS-MT 번역 모델 파일을 내려받습니다. 영어→한국어 모델과 한국어→영어 모델이 각각 약 247MB이며, 필요한 방향의 모델만 내려받습니다. 앱이 시작할 때나 백그라운드에서는 내려받지 않습니다.
+   - 번역은 사용자 PC 안에서 실행합니다. 번역할 글자와 캡처 이미지는 외부로 보내지 않습니다. 그림 핀은 이 PC의 문자 인식으로 글자를 읽은 뒤 번역합니다.
+   - 핀의 번역문은 화면에만 표시하고 저장하지 않습니다. 저장해 둔 핀을 다시 열면 원문으로 엽니다.
+   - 내려받은 모델 파일은 크기와 SHA-256으로 확인한 뒤 사용합니다.
    - 내려받은 모델은 Microsoft Store 설치본이면 앱 전용 폴더(`%LOCALAPPDATA%\Packages\<패키지 이름>\LocalCache`), GitHub에서 받은 설치 파일이나 포터블 ZIP 설치본이면 `%LOCALAPPDATA%\MyCapture\translation-models`에 저장합니다.
    - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다. GitHub로 전달된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
-3. **GitHub 이미지 첨부**: 사용자가 이 기능의 단축키를 눌렀을 때만 동작합니다. 새로 설치하면 단축키가 지정되어 있지 않고, 이전 버전에서 업데이트한 설치는 쓰던 키(이전 기본값 `F9`)를 그대로 씁니다.
+3. **Mermaid 그림 표시**: 핀에 담긴 Markdown의 Mermaid 그림은 Windows의 Microsoft Edge WebView2로 이 PC 안에서 그립니다. MyCapture에 포함된 스크립트만 불러오며, 이 브라우저는 외부 주소에 연결하지 않도록 설정합니다. 그리는 동안 쓰는 브라우저 데이터는 MyCapture 데이터 폴더(GitHub 설치본은 `%APPDATA%\MyCapture\mermaid-browser`)에 둡니다. WebView2 런타임 자체의 업데이트는 Windows와 Microsoft Edge의 정책을 따릅니다.
+4. **GitHub 이미지 첨부**: 사용자가 이 기능의 단축키를 눌렀을 때만 동작합니다. 새로 설치하면 단축키가 지정되어 있지 않고, 이전 버전에서 업데이트한 설치는 쓰던 키(이전 기본값 `F9`)를 그대로 씁니다.
    - 토큰을 설정했으면 GitHub API를 통해 이미지를 GitHub에 올립니다. 브라우저 화면을 캡처한 이미지라면 페이지 주소 메타데이터가 함께 전송될 수 있습니다.
    - 토큰이 없으면 설정한 이슈 페이지(기본값은 이 지원 저장소의 새 이슈 페이지)를 기본 브라우저로 열고 이미지를 붙여 넣기만 합니다. 게시 버튼은 누르지 않습니다.
    - GitHub로 전송된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
-4. **원본 페이지 열기**: 사용자가 라이브러리에서 저장된 페이지 주소를 열면 기본 브라우저가 그 주소에 연결합니다.
-5. **새 버전 확인**: 설정 > 정보의 "새 버전 자동 확인"이 켜져 있으면(기본값) 하루에 한 번 새 버전이 있는지 확인합니다. 이 설정을 끄면 "업데이트 확인"을 누를 때만 확인합니다.
+5. **원본 페이지 열기**: 사용자가 라이브러리에서 저장된 페이지 주소를 열면 기본 브라우저가 그 주소에 연결합니다.
+6. **새 버전 확인**: 설정 > 정보의 "새 버전 자동 확인"이 켜져 있으면(기본값) 하루에 한 번 새 버전이 있는지 확인합니다. 이 설정을 끄면 "업데이트 확인"을 누를 때만 확인합니다.
    - Microsoft Store에서 설치한 경우 Microsoft Store를 통해 확인하고 설치합니다.
    - GitHub에서 받은 설치 파일이나 포터블 ZIP으로 설치한 경우 GitHub API(`api.github.com`)에서 최신 릴리스 정보를 확인합니다. 업데이트를 누르면 GitHub(`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`)에서 설치 파일과 해시 목록을 내려받습니다.
    - 이 요청에는 일반적인 HTTP 연결 정보(IP 주소, 앱 이름과 버전이 담긴 User-Agent)만 전달됩니다. 캡처 내용이나 개인정보는 포함되지 않습니다. GitHub로 전달된 정보에는 [GitHub 개인정보처리방침](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement)이 적용됩니다.
@@ -66,7 +69,7 @@ Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공
 
 # MyCapture Privacy Policy
 
-Effective date: 2026-10-25
+Effective date: 2026-10-29
 
 MyCapture is a desktop app, distributed through the Microsoft Store, that captures, annotates, recognizes text in (OCR), translates and records the screen on your PC.
 
@@ -100,16 +103,19 @@ MyCapture connects to the internet only in these cases:
    - The "Most accurate" quality, available up to version 4.6.0, downloads an image upscaling model from Amazon S3 (qaihub-public-assets) the first time you use it. Later versions no longer offer it and change a saved "Most accurate" setting to Accurate.
    - These requests carry only ordinary HTTP connection data (IP address, a User-Agent with the app name). They never include capture content or personal information.
 2. **Translation model download**
-   - Translation is off by default. Only when you press **Turn on translation** in the Translate tab of the OCR result window does MyCapture download the public OPUS-MT English-to-Korean translation model files (about 247 MB) from GitHub (`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`). Nothing is downloaded at startup or in the background.
-   - Translation runs on your PC. The text to translate and your captured images are never sent anywhere.
+   - Translation is off by default. Only when you press **Turn on translation** in the Translate tab of the OCR result window, or press **Translate** on a pin and agree to the install, does MyCapture download the public OPUS-MT translation model files from GitHub (`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`). The English-to-Korean and Korean-to-English models are about 247 MB each, and only the direction you need is downloaded. Nothing is downloaded at startup or in the background.
+   - Translation runs on your PC. The text to translate and your captured images are never sent anywhere. For an image pin, MyCapture first reads the text with text recognition on your PC.
+   - A pin's translation is only shown on screen and is not saved. A saved pin reopens with its original text.
+   - Downloaded model files are checked by size and SHA-256 before use.
    - The model is stored in the app's package folder (`%LOCALAPPDATA%\Packages\<package name>\LocalCache`) for Microsoft Store installations, or in `%LOCALAPPDATA%\MyCapture\translation-models` for installations from the GitHub setup file or portable ZIP.
    - These requests carry only ordinary HTTP connection data (IP address, a User-Agent with the app name). They never include capture content or personal information. [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to data that reaches GitHub.
-3. **GitHub image attachment**: runs only when you press its shortcut. New installations have no shortcut assigned; installations updated from an earlier version keep their key (the earlier default was `F9`).
+3. **Mermaid diagrams**: Mermaid diagrams in a pin's Markdown are drawn on your PC with Microsoft Edge WebView2 in Windows. Only the script bundled with MyCapture is loaded, and this browser is set not to connect to any outside address. Browser data used while drawing is kept in the MyCapture data folder (`%APPDATA%\MyCapture\mermaid-browser` for GitHub installations). Updates of the WebView2 runtime itself follow Windows and Microsoft Edge policies.
+4. **GitHub image attachment**: runs only when you press its shortcut. New installations have no shortcut assigned; installations updated from an earlier version keep their key (the earlier default was `F9`).
    - With a token configured, the image is uploaded to GitHub through its API. For a browser capture, the page address metadata may be included.
    - Without a token, the app opens your configured issue page (by default, a new issue in this support repository) in your default browser and pastes the image without posting it.
    - [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to data sent to GitHub.
-4. **Opening a source page**: when you open a saved page address from the library, your default browser connects to it.
-5. **Checking for new versions**: with "Check for new versions automatically" on in Settings > About (the default), MyCapture checks once a day whether a new version exists. With it off, it checks only when you press **Check for updates**.
+5. **Opening a source page**: when you open a saved page address from the library, your default browser connects to it.
+6. **Checking for new versions**: with "Check for new versions automatically" on in Settings > About (the default), MyCapture checks once a day whether a new version exists. With it off, it checks only when you press **Check for updates**.
    - Microsoft Store installations check and install through the Microsoft Store.
    - Installations from the GitHub setup file or portable ZIP read the latest release information from the GitHub API (`api.github.com`). Pressing **Update** downloads the installer and its hash list from GitHub (`github.com`, `objects.githubusercontent.com`, `release-assets.githubusercontent.com`).
    - These requests carry only ordinary HTTP connection information (IP address and a User-Agent with the app name and version), never capture content or personal data. [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) applies to what reaches GitHub.

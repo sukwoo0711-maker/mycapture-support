@@ -1,6 +1,6 @@
 # MyCapture 개인정보처리방침
 
-시행일: 2026-11-07
+시행일: 2026-11-08
 
 MyCapture는 화면 캡처, 주석 편집, OCR, 번역, 영역 녹화를 사용자 PC 안에서 처리하는 데스크톱 앱이며 Microsoft Store로 배포합니다.
 
@@ -77,7 +77,7 @@ Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공
 
 # MyCapture Privacy Policy
 
-Effective date: 2026-11-07
+Effective date: 2026-11-08
 
 MyCapture is a desktop app, distributed through the Microsoft Store, that captures, annotates, recognizes text in (OCR), translates and records the screen on your PC.
 

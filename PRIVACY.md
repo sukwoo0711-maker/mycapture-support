@@ -1,6 +1,6 @@
 # MyCapture 개인정보처리방침
 
-시행일: 2026-10-29
+시행일: 2026-11-16
 
 MyCapture는 화면 캡처, 주석 편집, OCR, 번역, 영역 녹화를 사용자 PC 안에서 처리하는 데스크톱 앱이며 Microsoft Store로 배포합니다.
 
@@ -55,8 +55,8 @@ Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공
 
 ## 데이터 삭제
 
-- 라이브러리의 항목은 앱 안에서 삭제할 수 있습니다. 새로 설치하면 보관 기간 제한이 없고, 폴더 밖 항목이 1,000개나 5GB를 넘을 때만 오래된 항목부터 자동으로 정리합니다. 보관으로 표시한 항목과 폴더에 넣은 항목은 자동 정리에서 제외합니다.
-- 이전 버전에서 업데이트한 설치는 쓰던 설정을 그대로 씁니다. 이전 기본값은 7일이 지난 이미지 정리, 300개, 2GB입니다. 보관 기간과 한도는 설정 > 저장 공간에서 바꿀 수 있습니다.
+- 라이브러리의 항목은 앱 안에서 삭제할 수 있습니다. 새로 설치하면 보관 기간 제한이 없고, 폴더 밖 항목이 1,000개를 넘을 때만 오래된 항목부터 자동으로 정리합니다. 차지하는 용량 때문에 지우지는 않습니다. 보관으로 표시한 항목과 폴더에 넣은 항목은 자동 정리에서 제외합니다.
+- 이전 버전에서 업데이트한 설치는 쓰던 보관 기간과 항목 수 설정을 그대로 씁니다. 이전 기본값은 7일이 지난 이미지 정리와 300개입니다. 보관 기간과 항목 수는 설정 > 저장 공간에서 바꿀 수 있습니다.
 - GitHub 토큰은 설정에서 지울 수 있습니다.
 - 내려받은 번역 모델은 설정에서 삭제할 수 있습니다.
 - 앱을 제거하면 앱 전용 폴더의 설정과 라이브러리가 삭제됩니다.
@@ -69,7 +69,7 @@ Microsoft Store 설치본의 설치와 업데이트는 Microsoft Store가 제공
 
 # MyCapture Privacy Policy
 
-Effective date: 2026-10-29
+Effective date: 2026-11-16
 
 MyCapture is a desktop app, distributed through the Microsoft Store, that captures, annotates, recognizes text in (OCR), translates and records the screen on your PC.
 
@@ -124,8 +124,8 @@ For Microsoft Store installations, installation and updates are provided by the 
 
 ## Deleting data
 
-- You can delete library items in the app. New installations keep items with no time limit and clean up the oldest items outside folders only after they pass 1,000 items or 5 GB. Items marked Keep and items in folders are never cleaned up automatically.
-- Installations updated from an earlier version keep their settings. The earlier defaults were cleanup of images older than 7 days, 300 items and 2 GB. Change the retention period and limits in Settings > Storage.
+- You can delete library items in the app. New installations keep items with no time limit and clean up the oldest items outside folders only after they pass 1,000 items. Nothing is deleted because of the space it takes. Items marked Keep and items in folders are never cleaned up automatically.
+- Installations updated from an earlier version keep their retention period and item limit. The earlier defaults were cleanup of images older than 7 days and 300 items. Change both in Settings > Storage.
 - You can clear the GitHub token in Settings.
 - You can delete the downloaded translation model in Settings.
 - Uninstalling the app deletes the settings and library in its package folder.
